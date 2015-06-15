@@ -8,8 +8,8 @@ describe('House', function(){
 
   it('has a number of bedrooms', function(){
     expect(boulder_home.numOfBedrooms).toEqual(3);
-  })
-})
+  });
+});
 
 describe('getRooms', function() {
   it('returns all rooms in the House', function() {
