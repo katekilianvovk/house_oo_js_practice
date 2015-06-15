@@ -1,22 +1,23 @@
 var Room = require('../room');
+var Furniture = require('../furniture');
 
 describe('Room', function(){
-  var katieRoom = new Room(office, 11, 13)
+  var room = new Room("office", 11, 13)
 
   it('the room is empty until it is moved in', function(){
     expect(room.contents).toEqual([]);
   })
 
   it('has a name', function(){
-    expect(list.name).toEqual(office);
+    expect(room.name).toEqual("office");
   })
 
   it('has a width', function(){
-    expect(list.width).toEqual(11);
+    expect(room.width).toEqual(11);
   })
 
   it('has a length', function(){
-    expect(list.length).toEqual(13);
+    expect(room.length).toEqual(13);
   })
 })
 
@@ -31,14 +32,14 @@ describe('#addFurniture', function(){
   });
 
   it('takes an argument for the furniture', function(){
-    list.addFurniture(bed);
+    bedroom.addFurniture(bed);
     expect(bedroom.contents).toEqual([bed]);
   });
 
   it('correctly handles multiple furniture', function(){
     bedroom.addFurniture(chair);
     bedroom.addFurniture(desk);
-    expect(bedroom.contents).toEqual([desk, chair]);
+    expect(bedroom.contents).toEqual([chair, desk]);
   });
 
   it('does not allow duplicate furniture', function(){
@@ -63,7 +64,7 @@ describe('#removeFurniture', function(){
     bedroom.addFurniture(chair);
     bedroom.addFurniture(desk);
     expect(bedroom.contents).toEqual([bed, chair, desk]);
-    list.removeFurniture(desk);
+    bedroom.removeFurniture(desk);
     expect(bedroom.contents).toEqual([bed, chair]);
   });
 })

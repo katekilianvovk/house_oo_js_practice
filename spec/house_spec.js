@@ -1,12 +1,13 @@
-var House = require('../house')
-var Family = require('../family')
-var Room = require('../room')
+var House = require('../house');
+var Family = require('../family');
+var Room = require('../room');
+var Furniture = require('../furniture')
 
 describe('House', function(){
-  var boulder_home = new Home(20)
+  var boulder_home = new House(3)
 
   it('has a number of bedrooms', function(){
-    expect(list.numOfBedrooms).toEqual(3);
+    expect(boulder_home.numOfBedrooms).toEqual(3);
   })
 })
 
@@ -24,18 +25,16 @@ describe('addRoom', function() {
     var house = new House();
     house.addRoom(room);
 
-    expect(gradeBook.getRoomss()).toEqual({'family room': []});
+    expect(house.getRooms()).toEqual({'family room': []});
   });
-});
-
 
 
   it('adds a room if the family size is < 5', function(){
     var room = new Room('family room', 16, 16);
-    var lgFamily = new Fmaily(7);
+    var lgFamily = new Family(7);
     var house = new House();
     house.addRoom(room);
 
-    expect(gradeBook.getRoomss()).toEqual({'family room': []});
+    expect(house.getRooms()).toEqual({'family room': []});
   })
 });
